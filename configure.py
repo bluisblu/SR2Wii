@@ -29,7 +29,7 @@ from tools.project import (
 # Game versions
 DEFAULT_VERSION = 0
 VERSIONS = [
-    "GAMEID",  # 0
+    "RS9E8P_PROTO",  # Sept. 1, 2007 Prototype
 ]
 
 parser = argparse.ArgumentParser()
@@ -158,7 +158,7 @@ if not config.non_matching:
 # Tool versions
 config.binutils_tag = "2.42-1"
 config.compilers_tag = "20250812"
-config.dtk_tag = "v1.7.1"
+config.dtk_tag = "v1.7.0"
 config.objdiff_tag = "v3.4.1"
 config.sjiswrap_tag = "v1.2.2"
 config.wibo_tag = "1.0.0-beta.5"
@@ -255,7 +255,7 @@ config.linker_version = "GC/1.3.2"
 def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
     return {
         "lib": lib_name,
-        "mw_version": "GC/1.2.5n",
+        "mw_version": "GC/3.0a3",
         "cflags": cflags_base,
         "progress_category": "sdk",
         "objects": objects,
@@ -266,16 +266,18 @@ def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
 def Rel(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
     return {
         "lib": lib_name,
-        "mw_version": "GC/1.3.2",
+        "mw_version": "GC/3.0a3",
         "cflags": cflags_rel,
         "progress_category": "game",
         "objects": objects,
     }
 
 
-Matching = True                   # Object matches and should be linked
-NonMatching = False               # Object does not match and should not be linked
-Equivalent = config.non_matching  # Object should be linked when configured with --non-matching
+Matching = True  # Object matches and should be linked
+NonMatching = False  # Object does not match and should not be linked
+Equivalent = (
+    config.non_matching
+)  # Object should be linked when configured with --non-matching
 
 
 # Object is only matching for specific versions
