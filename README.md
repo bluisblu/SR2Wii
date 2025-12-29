@@ -1,6 +1,6 @@
-Some Game  
-[![Build Status]][actions] [![Code Progress]][progress] [![Data Progress]][progress] [![Discord Badge]][discord]
-=============
+# Sonic Riders: Zero Gravity
+
+<!-- [![Build Status]][actions] [![Code Progress]][progress] [![Data Progress]][progress] [![Discord Badge]][discord] -->
 
 <!--
 Replace with your repository's URL.
